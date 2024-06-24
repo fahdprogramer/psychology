@@ -1,7 +1,11 @@
-<div class="p-4 bg-[#d7c9b7] bg-opacity-20 lg:px-10 lg:grid grid-cols-2 lg:gap-10 min-h-screen" id="contact_us">
+<div class="p-4 bg-[#d7c9b7] bg-opacity-20 lg:px-10 lg:grid grid-cols-2 lg:gap-10 " id="contact_us">
+   
+    <div class=" w-full">
+        <img src="images/other/deal.png" class="w-full" alt="RoseLine">
+    </div>
     <div>
         <form wire:submit="save" class="">
-            <h1 class="text-2xl m-5 mx-auto text-center font-bold x_wd_display_underline w-fit">مراسلة إدارة المتجر
+            <h1 class="text-2xl m-5 mx-auto text-center font-bold x_wd_display_underline w-fit">مراسلة إدارة الموقع
             </h1>
             <div class="w-full justify-center items-center">
 
@@ -77,7 +81,7 @@
                     </div>
 
                     <textarea type="text" cols="40" rows="3" type="text" id="content" name="content" wire:model="content"
-                        required placeholder="قم بكتابة استفسارك هنا، وسيقوم فريق روزلين بمراسلتك في أقرب وقت ممكن"
+                        required placeholder="قم بكتابة استفسارك هنا، وسيقوم فريقنا بمراسلتك في أقرب وقت ممكن"
                         class="mx-auto bg-slate-200 border px-4 border-gray-300 text-gray-900  rounded-3xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
                 </textarea>
 
@@ -93,13 +97,10 @@
 
 
 
-            <div class="fji mt-5">
+            <div class="flex justify-center mt-5">
                 <button type="submit"
                     class="text-gray-900  bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">إرسال</button>
             </div>
         </form>
-    </div>
-    <div class=" w-full">
-        <img src="images/other/deal.png" class="w-full" alt="RoseLine">
     </div>
 </div>

@@ -36,7 +36,7 @@ new #[Layout('layouts.guest')] class extends Component
 
        // $this->redirect(RouteServiceProvider::HOME, navigate: true);
         
-        $this->redirectIntended(default: route('dashboard', absolute: false), navigate: false);
+        $this->redirectIntended(default: route('welcome', absolute: false), navigate: false);
     }
 }; ?>
 
@@ -80,7 +80,7 @@ new #[Layout('layouts.guest')] class extends Component
                     
                       </div>
                       
-                      <input type="text" id="name" name="name" wire:model="name" required autofocus autocomplete="name" class="mx-auto bg-slate-200 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2" >
+                      <input type="text" id="name" name="name" wire:model="name" required  autocomplete="name" class="mx-auto bg-slate-200 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2" >
                     </div>
                <div class="min-h-[16px]">@error('name')<h4 class="text-red-700  text-center"> {{ $message }}</h4>@enderror</div>
         </div>
@@ -92,7 +92,7 @@ new #[Layout('layouts.guest')] class extends Component
                     
                       </div>
                       
-                      <input type="text" id="email" name="email" wire:model="email" required autofocus autocomplete="email" class="mx-auto bg-slate-200 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2" >
+                      <input type="text" id="email" name="email" wire:model="email" required  autocomplete="email" class="mx-auto bg-slate-200 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2" >
              </div>
                      <div class="min-h-[16px]">@error('email')<h4 class="text-red-700  text-center"> {{ $message }}</h4>@enderror</div>
         </div>
@@ -104,7 +104,7 @@ new #[Layout('layouts.guest')] class extends Component
                     
                       </div>
                       
-                      <input type="number" id="phone" name="phone" wire:model="phone" required autofocus autocomplete="phone" class="mx-auto bg-slate-200 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2" >
+                      <input type="number" id="phone" name="phone" wire:model="phone" required  autocomplete="phone" class="mx-auto bg-slate-200 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2" >
              </div>
                      <div class="min-h-[16px]">@error('phone')<h4 class="text-red-700  text-center"> {{ $message }}</h4>@enderror</div>
         </div>
@@ -128,7 +128,7 @@ new #[Layout('layouts.guest')] class extends Component
                     
                       </div>
                       
-                      <input type="password" id="password_confirmation" name="password_confirmation" wire:model="password_confirmation" required autofocus autocomplete="confirmPassword" class="mx-auto bg-slate-200 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2" >
+                      <input type="password" id="password_confirmation" name="password_confirmation" wire:model="password_confirmation" required  autocomplete="confirmPassword" class="mx-auto bg-slate-200 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2" >
             </div>
             <div class="min-h-[16px]">@error('password_confirmation')<h4 class="text-red-700  text-center"> {{ $message }}</h4>@enderror</div>
         </div>

@@ -12,10 +12,18 @@ use App\Livewire\Product\ShowallProduct;
 use App\Livewire\Product\ShowCard;
 use App\Livewire\Product\ShowProduct;
 use App\Livewire\Product\ShowsGuestcard;
+use App\Livewire\Student\MessangerChat;
+use App\Livewire\Teacher\WelcometeacherPage;
 use App\Livewire\WelcomePage;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', WelcomePage::class)->name('welcome');
+Route::get('/messanger', MessangerChat::class)->name('chat.messanger');
+
+Route::get('/hello_teacher', WelcometeacherPage::class)->name('welcome.teacher');
+Route::get('/teacher_messanger/{student_id}', App\Livewire\Teacher\MessangerChat::class)->name('teacher.chat.messanger');
+
+
 Route::get('/show_product/{product}', ShowProduct::class)->name('show.product');
 Route::get('/show_all_the_products', ShowallProduct::class)->name('show.all.products');
 Route::get('/show_card', ShowCard::class)->name('show.card');

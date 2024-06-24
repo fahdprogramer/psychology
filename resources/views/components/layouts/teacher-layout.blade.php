@@ -38,7 +38,7 @@
 font-optical-sizing: auto;
 font-weight: 300;
 font-style: normal;">
-    <livewire:other.navbar-component />
+    <livewire:teacher.navbar-component />
 <div class="px-4 bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 bg-opacity-70">
    {{ $slot }} 
 </div>

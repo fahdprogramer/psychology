@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'ملكة الجنوب') }}</title>
+    <title>{{ $title ?? 'website name' }}</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -43,7 +43,7 @@
                                 style="font-family: 'Great Vibes', cursive;
             font-weight: 400;
             font-style: normal;">
-                                Roseline Store</h1>
+                                website name</h1>
                         </div>
                     </a>
 
