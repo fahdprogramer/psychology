@@ -1,5 +1,5 @@
-<div class="p-4 bg-[#b1a067] bg-opacity-20 lg:p-10 lg:grid grid-cols-2 lg:gap-10 my-4 rounded-xl" id="contact_us">
-    @if ($is_onreq)
+<div wire:poll class="p-4 bg-[#b1a067] bg-opacity-20 lg:p-10 lg:grid grid-cols-2 lg:gap-10 my-4 rounded-xl" id="contact_us">
+    @if ($is_onreq!=null)
         <div class="flex justify-center items-center {{ $is_onreq->state == 'on_standby' ? '' : 'hidden' }}">
             <div>
                 <h1 class="text-2xl text-center">لديك طلب في انتظار موافقة الأستاذ <span
@@ -24,8 +24,10 @@
         </div>
     @endif
 
+@if (!$is_onreq)
+    
 
-    <div class="{{ $is_onreq ? 'hidden' : '' }}">
+    <div >
         <form wire:submit="save" class="">
             <h1 class="text-2xl m-5 mx-auto text-center font-bold x_wd_display_underline w-fit">طلب مرافقة جديدة
             </h1>
@@ -99,11 +101,13 @@
 
             <div class="flex justify-center w-full mt-5">
                 <button type="submit"
-                    class="text-gray-900  bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg  px-20 py-3 text-center mx-auto">إرسال
+                    class="text-gray-900  mb-3 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg  px-20 py-3 text-center mx-auto">إرسال
                     الطلب</button>
             </div>
         </form>
     </div>
+    @endif
+
     <div class=" w-full h-full">
         <img src="images/other/1.jpg" class="w-full h-full rounded-xl" alt="website">
     </div>

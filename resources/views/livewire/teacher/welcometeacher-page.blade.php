@@ -6,8 +6,9 @@
      </h1> 
    
     </div>
-    <livewire:teacher.sponsored-liste>
-    @endauth
+    <livewire:teacher.sponsoreds-request>
+      <livewire:teacher.sponsored-liste>
+        @endauth
       
            <livewire:contact-us>
            

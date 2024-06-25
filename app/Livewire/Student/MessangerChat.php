@@ -23,6 +23,10 @@ class MessangerChat extends Component
     }
 
     public function send() {
+        $exist = Sponsorship::where('student_id',Auth::user()->id)->where('state','accepted')->first();
+        if (!$exist) {
+            return redirect()->route('welcome');
+        }
         if ($this->content!='') {
           $message = new Discussion();
         $message->sender_id = Auth::user()->id;
@@ -35,9 +39,11 @@ class MessangerChat extends Component
         
     }
 
+   
 
     public function render()
     {
+        
         return view('livewire.student.messanger-chat',[
             'messages' => Discussion::where('discussion_id',$this->sponsorship->id)->orderBy('id','asc')->get(),
         ]);

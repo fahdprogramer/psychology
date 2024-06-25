@@ -26,6 +26,7 @@ new #[Layout('layouts.guest')] class extends Component {
         if (Auth::user()->hasRole('Teacher')) {
             $this->redirectIntended(default: route('welcome.teacher', absolute: false), navigate: false);
         } else {
+            
             $this->redirectIntended(default: route('welcome', absolute: false), navigate: false);
         }
     }

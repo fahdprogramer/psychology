@@ -1,19 +1,26 @@
-<div class="h-full grid grid-cols-5 ">
+<div wire:poll class="h-full grid grid-cols-5 ">
     <div class="col-span-4 bg-opacity-40 bg-slate-300 h-full p-8">
         <div class="rounded-b-2xl bg-slate-300 h-96 overflow-y-auto p-6 rotate-180">
+            @if ($messages->isEmpty())
+                <div class="flex justify-center items-center rotate-180 h-full text-xl">
+                 قم بكتابة رسالة ترحيب الى الطالب  {{$student->name}} 
+                                </div>
+            @endif
+            
             <div class="rotate-180">
+ 
                 @foreach ($messages as $item)
                 @if ($item->sender_id==auth()->user()->id)
                 <div class="flex justify-start items-center  mb-2">
-                    <span class="px-6 py-6 rounded-full bg-rose-300 ml-3">أنت</span>
-                    <h1 class="rounded-xl bg-rose-400 w-fit max-w-[60%] px-4 py-2 rounded-tr-none">{{$item->content}}</h1>
+                    <span class="px-5 py-5 rounded-full bg-rose-300 ml-3">أنت</span>
+                    <h1  class="rounded-xl bg-rose-400 w-fit max-w-[60%] px-4 py-2 rounded-tr-none">{{$item->content}}</h1>
                 </div>
                     @else
                     <div class="flex justify-start items-center  mb-2" dir="ltr">
-                        <span class="px-4 py-6 rounded-full bg-emerald-300 mr-3">الأستاذ</span>
-                        <h1
+                        <span class="px-4 py-6 rounded-full bg-emerald-300 mr-3">الطالب</span>
+                        <h1 
                             class="rounded-xl text-left bg-emerald-400 w-fit max-w-[60%] h-fit px-4 py-2 rounded-tl-none">
-                            وعليكم السلام أهلا كيف الحال</h1>
+                            {{$item->content}}</h1>
                     </div>
                 @endif
                     
@@ -47,7 +54,10 @@
     </div>
     <div class="col-span-1 bg-opacity-40 bg-slate-500 h-full p-6  flex justify-center items-center">
         <div class="">
-            <h1 class="text-center">الأستاذ المرافق : <span class="text-blue-900 font-bold">ميدون محمد</span></h1>
-        </div>
+            <h1 class="text-center">الطالب : <span class="text-blue-900 font-bold">{{$student->name}}</span></h1>
+            <div class="flex justify-center items-center">
+               <button wire:click='finish' type="button" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-xs px-2 py-2.5 text-center mt-4">إنهاء المرافقة</button> 
+            </div>
+            </div>
     </div>
 </div>

@@ -1,6 +1,11 @@
-<div class="h-full grid grid-cols-5 ">
+<div wire:poll class="h-full grid grid-cols-5 ">
     <div class="col-span-4 bg-opacity-40 bg-slate-300 h-full p-8">
-        <div class="rounded-b-2xl bg-slate-300 h-96 overflow-y-auto p-6 rotate-180">
+        <div class="rounded-b-2xl bg-slate-300 h-96 overflow-y-auto p-6 rotate-180">  @if ($messages->isEmpty())
+            <div class="flex justify-center items-center rotate-180 h-full text-xl">
+             قم بكتابة رسالة ترحيب الى الاستاذ  {{$professor->name}} 
+                            </div>
+        @endif
+
             <div class="rotate-180">
                 @foreach ($messages as $item)
                 @if ($item->sender_id==auth()->user()->id)
@@ -11,9 +16,9 @@
                     @else
                     <div class="flex justify-start items-center  mb-2" dir="ltr">
                         <span class="px-4 py-6 rounded-full bg-emerald-300 mr-3">الأستاذ</span>
-                        <h1
+                        <h1 
                             class="rounded-xl text-left bg-emerald-400 w-fit max-w-[60%] h-fit px-4 py-2 rounded-tl-none">
-                            وعليكم السلام أهلا كيف الحال</h1>
+                            {{$item->content}}</h1>
                     </div>
                 @endif
                     
@@ -47,7 +52,7 @@
     </div>
     <div class="col-span-1 bg-opacity-40 bg-slate-500 h-full p-6  flex justify-center items-center">
         <div class="">
-            <h1 class="text-center">الأستاذ المرافق : <span class="text-blue-900 font-bold">ميدون محمد</span></h1>
+            <h1 class="text-center">الأستاذ المرافق : <span class="text-blue-900 font-bold">{{$professor->name}}</span></h1>
         </div>
     </div>
 </div>
