@@ -12,6 +12,7 @@
                 <div class="flex justify-start items-center  mb-2">
                     <span class="px-6 py-6 rounded-full bg-rose-300 ml-3">أنت</span>
                     <h1 class="rounded-xl bg-rose-400 w-fit max-w-[60%] px-4 py-2 rounded-tr-none">{{$item->content}}</h1>
+<h2 class="text-slate-400 text-xs mx-3">{{$item->created_at->format('H:i Y-m-d')}}</h2>
                 </div>
                     @else
                     <div class="flex justify-start items-center  mb-2" dir="ltr">
@@ -19,6 +20,7 @@
                         <h1 
                             class="rounded-xl text-left bg-emerald-400 w-fit max-w-[60%] h-fit px-4 py-2 rounded-tl-none">
                             {{$item->content}}</h1>
+                            <h2 class="text-slate-400 text-xs mx-3">{{$item->created_at->format('Y-m-d H:i')}}</h2> 
                     </div>
                 @endif
                     
@@ -53,6 +55,13 @@
     <div class="col-span-1 bg-opacity-40 bg-slate-500 h-full p-6  flex justify-center items-center">
         <div class="">
             <h1 class="text-center">الأستاذ المرافق : <span class="text-blue-900 font-bold">{{$professor->name}}</span></h1>
-        </div>
+            @if ($sponsorship->presence)
+                <div class="p-2 rounded-2xl shadow-md shadow-red-500 mt-6">
+                <h2 class="text-red-700 font-bold  text-center">ملاحظة: لقد طلب الأستاذ أن تكون المرافقة حضورية </h2> 
+            </div> 
+            @endif
+           
+
+                </div>
     </div>
 </div>

@@ -6,10 +6,14 @@ use App\Models\Discussion;
 use App\Models\Sponsorship;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 
 class MessangerChat extends Component
 {
+
+    use LivewireAlert;
+
    
     public string $content = '';
     public $sponsorship,$professor;
@@ -25,6 +29,12 @@ class MessangerChat extends Component
     public function send() {
         $exist = Sponsorship::where('student_id',Auth::user()->id)->where('state','accepted')->first();
         if (!$exist) {
+            $this->flash('info', 'لقد قام الأستاذ بإنهاء مرافقتك', [
+                'position' => 'center',
+                'timer' => '5046',
+                'toast' => true,
+                //'showCancelButton' => true,
+               ]);
             return redirect()->route('welcome');
         }
         if ($this->content!='') {

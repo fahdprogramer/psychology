@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Styleimage extends Model
+class Specialization extends Model
 {
-    protected $fillable = ['style_id','name'];
+    protected $fillable = ['name'];
     use HasFactory;
 }

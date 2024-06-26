@@ -10,9 +10,11 @@
       <livewire:teacher.sponsored-liste>
         @endauth
       
-           <livewire:contact-us>
+          
            
-                   
+             <div class="hidden">
+               <livewire:contact-us>
+            </div>      
                        
            </div>
    

@@ -14,6 +14,7 @@
                 <div class="flex justify-start items-center  mb-2">
                     <span class="px-5 py-5 rounded-full bg-rose-300 ml-3">أنت</span>
                     <h1  class="rounded-xl bg-rose-400 w-fit max-w-[60%] px-4 py-2 rounded-tr-none">{{$item->content}}</h1>
+                    <h2 class="text-slate-400 text-xs mx-3">{{$item->created_at->format('H:i Y-m-d')}}</h2>
                 </div>
                     @else
                     <div class="flex justify-start items-center  mb-2" dir="ltr">
@@ -21,6 +22,7 @@
                         <h1 
                             class="rounded-xl text-left bg-emerald-400 w-fit max-w-[60%] h-fit px-4 py-2 rounded-tl-none">
                             {{$item->content}}</h1>
+                            <h2 class="text-slate-400 text-xs mx-3">{{$item->created_at->format('Y-m-d H:i')}}</h2>
                     </div>
                 @endif
                     
@@ -56,8 +58,19 @@
         <div class="">
             <h1 class="text-center">الطالب : <span class="text-blue-900 font-bold">{{$student->name}}</span></h1>
             <div class="flex justify-center items-center">
-               <button wire:click='finish' type="button" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-xs px-2 py-2.5 text-center mt-4">إنهاء المرافقة</button> 
-            </div>
-            </div>
+                <button wire:click='finish' type="button" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-xs px-2 py-2.5 text-center mt-4">إنهاء المرافقة</button> 
+             </div>
+             <div class="flex justify-center items-center mt-6 {{$sponsorship->presence ? 'hidden' : '' }}">
+                <button wire:click='presence' type="button" class="text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-xs px-2 py-2.5 text-center mt-4">طلب المرافقة الحضورية</button> 
+             </div>
+             <div class="flex justify-center items-center mt-6 {{$sponsorship->presence ? '' : 'hidden' }}">
+                <button wire:click='presence' type="button" class="text-white bg-gradient-to-r from-rose-400 via-rose-500 to-rose-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-rose-300 dark:focus:ring-rose-800 shadow-lg shadow-rose-500/50 dark:shadow-lg dark:shadow-rose-800/80 font-medium rounded-lg text-xs px-2 py-2.5 text-center mt-4">إلغاء طلب المرافقة الحضورية</button> 
+             </div>
+             @if ($sponsorship->presence)
+                <div class="p-2 rounded-2xl shadow-md shadow-red-500 mt-6">
+                <h2 class="text-red-700 font-bold  text-center">ملاحظة: لقد طلبت أن تكون المرافقة حضورية </h2> 
+            </div> 
+            @endif
+             </div>
     </div>
 </div>

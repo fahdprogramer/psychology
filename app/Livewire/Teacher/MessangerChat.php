@@ -44,6 +44,15 @@ class MessangerChat extends Component
     }
 
     
+    public function presence() {
+        $this->sponsorship->presence = !$this->sponsorship->presence ;
+        $this->sponsorship->save();
+        
+    }
+
+    
+
+    
     #[Layout('components.layouts.teacher-layout')]
     public function render()
     {

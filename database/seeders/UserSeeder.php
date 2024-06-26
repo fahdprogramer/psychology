@@ -45,6 +45,7 @@ class UserSeeder extends Seeder
         ]);
         User::orderby('id', 'desc')->first()->assignRole($role1);
         
+        
         DB::table('users')->insert([
             'name' => 'عزاوي عبد الفتاح',
             'phone' => '067431' . fake()->unique()->biasedNumberBetween($min = 1000, $max = 9999, $function = 'sqrt'),
@@ -67,6 +68,11 @@ class UserSeeder extends Seeder
             'email_verified_at' => now(),
             'remember_token' => Str::random(10),
         ]);
+
+        DB::table('userspecialities')->insert(['user_id' => 3,'speciality_id' => 4]);
+        DB::table('userspecialities')->insert(['user_id' => 2,'speciality_id' =>3 ]);
+
+
         
     }
 }
