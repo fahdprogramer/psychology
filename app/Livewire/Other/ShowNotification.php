@@ -22,7 +22,7 @@ class ShowNotification extends Component
     public function render()
     {
         return view('livewire.other.show-notification',[
-            'notifications' => Notification::where('user_id',Auth::user()->id)->get() ,
+            'notifications' => Notification::where('user_id',Auth::user()->id)->orderBy('id','desc')->get() ,
         ]);
     }
 }

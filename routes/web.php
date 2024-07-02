@@ -1,5 +1,7 @@
 <?php
 
+use App\Livewire\Admin\StudentListe;
+use App\Livewire\Admin\TeacherListe;
 use App\Livewire\Admin\WelcomeAdmin;
 use App\Livewire\Other\ShowNotification;
 use App\Livewire\Profile;
@@ -17,6 +19,8 @@ Route::get('/hello_teacher', WelcometeacherPage::class)->name('welcome.teacher')
 Route::get('/teacher_messanger/{student_id}', App\Livewire\Teacher\MessangerChat::class)->name('teacher.chat.messanger');
 
 Route::get('/admin', WelcomeAdmin::class)->name('welcome.admin');
+Route::get('/student_liste', StudentListe::class)->name('student.liste');
+Route::get('/teacher_liste', TeacherListe::class)->name('teacher.liste');
 
 
 

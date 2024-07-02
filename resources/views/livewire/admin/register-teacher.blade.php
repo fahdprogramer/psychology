@@ -5,7 +5,7 @@
             background-repeat: repeat;
             background-size: cover ;
             position: relative;">
-        <div class=" flex w-full  h-full justify-center items-center bg-black bg-opacity-30  sm:pt-0">
+        <div class=" flex w-full  h-full justify-center items-center bg-white bg-opacity-30  sm:pt-0">
             <div class="w-full px-10 ">
                 <a href="/" class="flex justify-center sm:hidden items-center mb-10  ">
                     <div class="logo">
@@ -81,6 +81,20 @@
                      <div class="min-h-[16px]">@error('phone')<h4 class="text-red-700  text-center"> {{ $message }}</h4>@enderror</div>
         </div>
 
+        <select wire:model.live="speciality" id="specialities"
+                class="bg-slate-200  border border-gray-300 text-gray-900 text-sm rounded-2xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 "
+                style="animation-delay:1.2s;">
+                <option selected>إختر تخصص الأستاذ</option>
+                @foreach ($specialities as $item)
+                    <option value="{{ $item->id }}">{{ $item->name }} </option>
+                @endforeach
+            </select>
+            <div class="min-h-[16px]">
+                @error('speciality')
+                    <h4 class="text-red-700  text-center"> {{ $message }}</h4>
+                @enderror
+            </div>
+
         
         <div class="w-full justify-center items-center {{$errors->isEmpty() ? 'animate__animated animate__fadeInDown': ''}}" style="animation-delay: 0.7s;">
             <div class="relative">
@@ -104,14 +118,10 @@
             </div>
             <div class="min-h-[16px]">@error('password_confirmation')<h4 class="text-red-700  text-center"> {{ $message }}</h4>@enderror</div>
         </div>
-        <div class="flex justify-center mt-4 outline-none transform active:scale-75 transition-transform"><button type="submit" class="text-gray-900 {{$errors->isEmpty() ? 'animate__animated animate__fadeInUp' : ''}} bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 shadow-lg shadow-lime-500/50 rounded-lg text-sm px-9 py-2.5 text-center me-2 my-2 font-bold" style="animation-duration: 2s;animation-delay: 0s;">التسجيل</button>
+        <div class="flex justify-center mt-4 outline-none transform active:scale-75 transition-transform"><button type="submit" class="text-gray-900 {{$errors->isEmpty() ? 'animate__animated animate__fadeInUp' : ''}} bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 shadow-lg shadow-lime-500/50 rounded-lg text-sm px-9 py-2.5 text-center me-2 my-2 font-bold" style="animation-duration: 2s;animation-delay: 0s;">إضافة أستاذ</button>
     </div>
         </form>
-        <div class="flex justify-center mt-4 {{$errors->isEmpty() ? 'animate__animated animate__fadeInUp' : ''}}" style="animation-duration: 2s;animation-delay: 1s;">
-           <h1 class="text-center text-lg text-slate-100">لدي حساب ؟ </h1>
-           <a href="{{route('login')}}" wire:navigate><h2 class="text-center text-xl text-red-500 mr-2">الدخول</h2> </a>
-        
-        </div>
+       
         
     </div>
 
@@ -121,17 +131,16 @@
 
 </div>
 <div class="hidden sm:block col-span-1 md:col-span-3 border-r-2  border-cyan-400 lg:col-span-4 w-full h-full"
-style="background-image: url('/images/background/1.jpg');
+style="background-image: url('/images/background/2.jpg');
     background-position: center;
     background-repeat: repeat;
     background-size: cover ;
     position: relative;">
-<a href="/" class=" flex justify-end items-center m-8">
-    <button
-        class=" text-xl p-4 border-r-2 border-r-lime-300 border-t-2 border-b-2 hover:shadow-lime-600 hover:shadow-lg hover:border-t-lime-300 hover:border-b-2 hover:border-b-lime-300 border-b-fuchsia-300 border-t-fuchsia-300 hover:border-r-2 hover:border-r-fuchsia-500 bg-black rounded-r-xl  bg-opacity-30  text-white">الصفحة
-        الرئيسية</button>
-
+<div class="flex justify-center items-center h-full">
+    <a href="{{route('teacher.liste')}}">
+    <button type="button" class="text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">عرض قائمة الأساتذة</button>
 </a>
+</div>
 </div>
 
 </div>

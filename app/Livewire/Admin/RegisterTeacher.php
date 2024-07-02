@@ -2,29 +2,39 @@
 
 namespace App\Livewire\Admin;
 
+use App\Models\Specialization;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 
 class RegisterTeacher extends Component
 {
+    use LivewireAlert;
 
     public string $name = '';
     public string $email = '';
     public string $phone = '';
     public string $password = '';
     public string $password_confirmation = '';
+    public $speciality='', $specialities;
 
     /**
      * Handle an incoming registration request.
      */
+
+     public function mount() {
+        $this->specialities = Specialization::orderBy('id','desc')->get();
+        
+     }
     public function register(): void
     {
         $validated = $this->validate([
+            'speciality' => ['required'],
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'phone' => ['required',  'min:10', 'max:13'],
@@ -35,14 +45,17 @@ class RegisterTeacher extends Component
 
         event(new Registered($user = User::create($validated)));
 
+        $user->assignRole('Teacher');
+        DB::table('userspecialities')->insert(['user_id' => $user->id,'speciality_id' => $this->speciality]);
         //Auth::login($user);
 
-        $this->flash('info', 'لقد قام الأستاذ بإنهاء مرافقتك', [
+        $this->alert('info', 'تمت إضافة حساب الأستاذ بنجاح', [
             'position' => 'center',
             'timer' => '5046',
             'toast' => true,
             //'showCancelButton' => true,
            ]);
+           $this->reset();
 
        // $this->redirect(RouteServiceProvider::HOME, navigate: true);
         
