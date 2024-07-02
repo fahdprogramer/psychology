@@ -10,7 +10,9 @@ class WelcomePage extends Component
     public function mount() {
         //dd(Auth::user()->hasRole('Teacher'));
             if (Auth::check()) {
-                if (Auth::user()->hasRole('Teacher')) {
+                if (Auth::user()->hasRole('Admin')) {
+                    return redirect()->route('welcome.admin');        
+                }elseif (Auth::user()->hasRole('Teacher')) {
                     return redirect()->route('welcome.teacher');        
                 }
             }

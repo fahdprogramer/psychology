@@ -1,14 +1,19 @@
 <nav class='p-4 flex justify-between items-center text-xs sm:text-sm md:text-base'>
-    <div class='flex justify-center items-center'>
+    <a href="{{route('welcome')}}" class='flex justify-center items-center'>
         <button class='p-4 rounded-full bg-rose-200 ml-2'>logo</button>
         <h1>اسم الموقع</h1>
-    </div>
+    </a>
     @auth
        <div class="flex justify-center items-center">
+        <a href="{{route('profile')}}">
         <button class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300">حسابي</button>
-        <button class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300">الإشعارات</button>
-        <button class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300">طلبات المرافقة</button>
-    </div> 
+    </a>
+        @auth
+           <a href="{{route('show.notifications')}}">
+        <button class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300 flex">الإشعارات (<livewire:other.nbr-notification>) </button>
+    </a> 
+        @endauth
+         </div> 
     @endauth
     
     <div>

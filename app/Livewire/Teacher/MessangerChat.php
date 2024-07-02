@@ -3,6 +3,7 @@
 namespace App\Livewire\Teacher;
 
 use App\Models\Discussion;
+use App\Models\Notification;
 use App\Models\Sponsorship;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -39,6 +40,10 @@ class MessangerChat extends Component
     public function finish() {
         $this->sponsorship->state = 'finished';
         $this->sponsorship->save();
+        $notification = new Notification();
+        $notification->user_id = $this->student->id;
+        $notification->content = 'لقد أنهى الاستاذ "'.$this->professor->name.'" المرافقة، حظا موفقا لك في مسارك الدراسي! ';
+        $notification->save();
         return redirect()->route('welcome.teacher');
         
     }
@@ -47,6 +52,18 @@ class MessangerChat extends Component
     public function presence() {
         $this->sponsorship->presence = !$this->sponsorship->presence ;
         $this->sponsorship->save();
+        if ($this->sponsorship->presence) {
+            $notification = new Notification();
+        $notification->user_id = $this->student->id;
+        $notification->content = 'لقد طلب الاستاذ "'.$this->professor->name.'" أن تكون هناك مرافقة حطورية بينكما ';
+        $notification->save();
+        } else {
+            $notification = new Notification();
+        $notification->user_id = $this->student->id;
+        $notification->content = 'لقد ألغى الاستاذ "'.$this->professor->name.'" طلبه في أن تكون بينكما مرافقة حظورية ';
+        $notification->save();
+        }
+        
         
     }
 

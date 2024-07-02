@@ -1,4 +1,4 @@
-<div wire:poll class="p-4 bg-[#b1a067] bg-opacity-20 lg:p-10 lg:grid grid-cols-2 lg:gap-10 my-4 rounded-xl"
+<div wire:poll class="p-4 bg-[#b1a067] bg-opacity-20 lg:p-10 lg:grid grid-cols-2 lg:gap-10 mb-4  rounded-xl"
     id="contact_us">
     @if ($is_onreq != null)
         <div class="flex justify-center items-center {{ $is_onreq->state == 'on_standby' ? '' : 'hidden' }}">

@@ -23,7 +23,9 @@ new #[Layout('layouts.guest')] class extends Component {
         // $intendedUrl = session()->has('url.intended') ? session('url.intended') : RouteServiceProvider::HOME;
 
         // $this->redirect($intendedUrl, navigate: true);
-        if (Auth::user()->hasRole('Teacher')) {
+        if (Auth::user()->hasRole('Admin')) {
+            $this->redirectIntended(default: route('welcome.admin', absolute: false), navigate: false);
+        }elseif (Auth::user()->hasRole('Teacher')) {
             $this->redirectIntended(default: route('welcome.teacher', absolute: false), navigate: false);
         } else {
             

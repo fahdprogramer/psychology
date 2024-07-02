@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Welcomepage;
 
+use App\Models\Notification;
 use App\Models\Sponsorship;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -49,6 +50,12 @@ class SponsorshipRequest extends Component
         $sponsorship->save();
         $this->selected_professor = User::where('id',$this->professor)->first();
         $this->is_onreq=Sponsorship::where('student_id',Auth::user()->id)->where('state','on_standby')->orwhere('state','accepted')->first();
+        
+        $notification = new Notification();
+        $notification->user_id = $this->professor;
+        $notification->content = 'لديك طلب جديد لمرافقة طالب من الطلبة';
+        $notification->save();
+
         $this->alert('success', 'تمت إرسال طلبك بنجاح');
        // return redirect()->route('add.style', ['sponsorship' => $sponsorship->id]);
        $this->reset(['title', 'professor','content']);
@@ -69,6 +76,10 @@ class SponsorshipRequest extends Component
             if ($this->professors->isEmpty()) {
                 Sponsorship::where('student_id',Auth::user()->id)->where('state','refused')->update(['state'=>'new']);
                 $this->reset(['title', 'professor','content']);
+                $notification = new Notification();
+        $notification->user_id = Auth::user()->id;
+        $notification->content = 'يجب أن تكون مشكلتك منطقية او قم بتغيير عنوان طلبك ومحتواه رجاءا!!';
+        $notification->save();
             }
         }else {
             $this->professors = User::role('Teacher')->get();
