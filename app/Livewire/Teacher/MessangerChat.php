@@ -44,6 +44,10 @@ class MessangerChat extends Component
         $notification->user_id = $this->student->id;
         $notification->content = 'لقد أنهى الاستاذ "'.$this->professor->name.'" المرافقة، حظا موفقا لك في مسارك الدراسي! ';
         $notification->save();
+        $notification2 = new Notification();
+        $notification2->user_id = 1;
+        $notification2->content = 'لقد أنهى الاستاذ "'.$this->professor->name.'" مرافقت الطالب "'.$this->student->name.'"!';
+        $notification2->save();
         return redirect()->route('welcome.teacher');
         
     }

@@ -118,12 +118,13 @@ style="background-image: url('/images/background/6.jpg');
             <div class="min-h-[16px]">@error('password_confirmation')<h4 class="text-red-700  text-center"> {{ $message }}</h4>@enderror</div>
         </div>
         <div class="flex justify-center mt-4 outline-none transform active:scale-75 transition-transform"><button type="submit" class="text-gray-900 {{$errors->isEmpty() ? 'animate__animated animate__fadeInUp' : ''}} bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 shadow-lg shadow-lime-500/50 rounded-lg text-sm px-9 py-2.5 text-center me-2 my-2 font-bold" style="animation-duration: 2s;animation-delay: 0s;">إضافة أستاذ</button>
-    </div>
+           
         </form>
        
         
     </div>
-
+ <a href="{{route('student.liste')}}" class="sm:hidden flex  justify-center mt-4 outline-none transform active:scale-75 transition-transform"><button type="submit" class="text-gray-900 {{$errors->isEmpty() ? 'animate__animated animate__fadeInUp' : ''}} bg-gradient-to-r from-blue-200 via-blue-400 to-blue-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 shadow-lg shadow-blue-500/50 rounded-lg text-sm px-16 py-2.5 text-center me-2 my-2 font-bold" style="animation-duration: 2s;animation-delay: 0s;">عرض قائمة الطلبة</button>
+            </a>
 </div>
 </div>
 </div>

@@ -55,12 +55,15 @@ class RegisterTeacher extends Component
             'toast' => true,
             //'showCancelButton' => true,
            ]);
-           $this->reset();
+        $this->reset();
+        $this->specialities = Specialization::orderBy('id','desc')->get();
 
        // $this->redirect(RouteServiceProvider::HOME, navigate: true);
         
         //$this->redirectIntended(default: route('welcome', absolute: false), navigate: false);
     }
+
+
     #[Layout('components.layouts.admin-layout')]
     public function render()
     {

@@ -19,7 +19,7 @@
                         <span>{{ $selected_professor->userspeciality->speciality->name }}</span> )</span> </h1>
                 <div class="flex justify-center items-center">
                     <a href="{{ route('chat.messanger') }}"
-                        class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-16 py-3 mx-auto text-center mt-7">الذهاب
+                        class="text-white bg-gradient-to-r mb-5 from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-16 py-3 mx-auto text-center mt-7">الذهاب
                         إلى
                         الرسائل</a>
                 </div>
@@ -61,12 +61,11 @@
             @endif
 
             <select wire:model.live="professor" id="professors"
-                class="bg-slate-200  border border-gray-300 text-gray-900 text-sm rounded-2xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 "
+                class="bg-slate-200 text-xs  border border-gray-300 text-gray-900  rounded-2xl focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 "
                 style="animation-delay:1.2s;">
                 <option selected>إختر الأستاذ المرافق</option>
                 @foreach ($professors as $item)
-                    <option value="{{ $item->id }}">{{ $item->name }} (
-                        <span>{{ $item->userspeciality->speciality->name }}</span> )</option>
+                    <option class="" value="{{ $item->id }}">{{ $item->name }} (<span class="text-red-500" style="font-size: 6px;">{{ $item->userspeciality->speciality->name }}</span>)</option>
                 @endforeach
             </select>
             <div class="min-h-[16px]">

@@ -7,11 +7,11 @@ use Livewire\Component;
 
 class NavbarComponent extends Component
 {
-    public function logout(Logout $logout): void
+    public function logout(Logout $logout)
     {
         $logout();
 
-        $this->redirect('/', navigate: true);
+        return redirect()->route('login');
     }
 
     public function render()

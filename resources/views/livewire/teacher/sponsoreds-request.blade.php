@@ -53,13 +53,13 @@
                 
                         <td class="px-6 py-4 ">
                             <div class="flex justify-center">
-                            <button wire:click='accept({{$item->id}})'  class="text-black mx-auto bg-gradient-to-r from-lime-400 via-lime-500 to-lime-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 shadow-lg shadow-lime-500/50 dark:shadow-lg dark:shadow-lime-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">موافقة</button>
+                            <button wire:click='accept({{$item->id}})' wire:confirm="هل أنت متأكد من الموافقة?"  class="text-black mx-auto bg-gradient-to-r from-lime-400 via-lime-500 to-lime-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 shadow-lg shadow-lime-500/50 dark:shadow-lg dark:shadow-lime-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">موافقة</button>
                         </div>
                             </td>
                     
                         <td class="px-6 py-4 ">
                         <div class="flex justify-center">
-                        <button wire:click='refuse({{$item->id}})'  class="text-black mx-auto bg-gradient-to-r from-rose-400 via-rose-500 to-rose-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-rose-300 dark:focus:ring-rose-800 shadow-lg shadow-rose-500/50 dark:shadow-lg dark:shadow-rose-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">رفض</button>
+                        <button wire:click='refuse({{$item->id}})' wire:confirm="هل أنت متأكد من الرفض?"  class="text-black mx-auto bg-gradient-to-r from-rose-400 via-rose-500 to-rose-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-rose-300 dark:focus:ring-rose-800 shadow-lg shadow-rose-500/50 dark:shadow-lg dark:shadow-rose-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">رفض</button>
                     </div>
                         </td>
             </tr>

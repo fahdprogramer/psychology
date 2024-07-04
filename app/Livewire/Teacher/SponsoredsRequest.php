@@ -26,6 +26,12 @@ class SponsoredsRequest extends Component
         $notification->user_id = $sponsorship->student_id;
         $notification->content = 'مبارك لك! لقد وافق الأستاذ "'.$sponsorship->teacher->name.'" على مرافقتك يمكنك مراسلته الآن ';
         $notification->save();
+
+        $notification2 = new Notification();
+        $notification2->user_id = 1;
+        $notification2->content = 'مرافقة جديدة! لقد وافق الأستاذ "'.$sponsorship->teacher->name.'" على مرافقت الطالب "'.$sponsorship->student->name.'".';
+        $notification2->save();
+
         return redirect()->route('teacher.chat.messanger', [$sponsorship->student_id]);
     }
 
@@ -41,6 +47,11 @@ class SponsoredsRequest extends Component
         $notification->user_id = $sponsorship->student_id;
         $notification->content = 'لقد رفض الاستاذ "'.$sponsorship->teacher->name.'" طلبك للمرافقة قم باختيار استاذ آخر أو قم بتغيير محتوى طلبك ';
         $notification->save();
+
+        $notification2 = new Notification();
+        $notification2->user_id = 1;
+        $notification2->content = 'رفض مرافقة! لقد رفض الأستاذ "'.$sponsorship->teacher->name.'" مرافقة الطالب "'.$sponsorship->student->name.'".';
+        $notification2->save();
     }
 
     public function info(Sponsorship $sponsorship) {
