@@ -14,28 +14,28 @@ class SponsorshipRequest extends Component
 {
 
     use LivewireAlert;
-    
-    public $professors, $selected_professor='',$is_onreq=false,$refuses,$noTeacher=false ;
-    
+
+    public $professors, $selected_professor = '', $is_onreq = false, $refuses, $noTeacher = false;
+
     #[Validate('required')]
     public string $professor = '';
 
     #[Validate('required')]
     public string $title = '';
-    
+
     #[Validate('required')]
     public string $content = '';
-    
+
     public function mount()
     {
-        
-        
+
+
         $this->professors = User::role('Teacher')->get();
-        $this->is_onreq = Sponsorship::where('student_id',Auth::user()->id)->where('state','on_standby')->orwhere('state','accepted')->first();
+        $this->is_onreq = Sponsorship::where('student_id', Auth::user()->id)->where('state', 'on_standby')->orwhere('student_id', Auth::user()->id)->where('state', 'accepted')->first();
         if ($this->is_onreq) {
-            $this->selected_professor = User::where('id',$this->is_onreq->teacher_id)->first();
+            $this->selected_professor = User::where('id', $this->is_onreq->teacher_id)->first();
         }
-//dd($this->is_onreq);
+        //dd($this->is_onreq);
     }
 
     public function save()
@@ -48,44 +48,45 @@ class SponsorshipRequest extends Component
         $sponsorship->student_id = Auth::user()->id;
         $sponsorship->teacher_id = $this->professor;
         $sponsorship->save();
-        $this->selected_professor = User::where('id',$this->professor)->first();
-        $this->is_onreq=Sponsorship::where('student_id',Auth::user()->id)->where('state','on_standby')->orwhere('state','accepted')->first();
-        
+        $this->selected_professor = User::where('id', $this->professor)->first();
+        $this->is_onreq = Sponsorship::where('student_id', Auth::user()->id)->where('state', 'on_standby')->orwhere('student_id', Auth::user()->id)->where('state', 'accepted')->first();
+
         $notification = new Notification();
         $notification->user_id = $this->professor;
         $notification->content = 'لديك طلب جديد لمرافقة طالب من الطلبة';
         $notification->save();
 
         $this->alert('success', 'تمت إرسال طلبك بنجاح');
-       // return redirect()->route('add.style', ['sponsorship' => $sponsorship->id]);
-       $this->reset(['title', 'professor','content']);
+        // return redirect()->route('add.style', ['sponsorship' => $sponsorship->id]);
+        $this->reset(['title', 'professor', 'content']);
     }
-    
-    public function newer() {
-        Sponsorship::where('student_id',Auth::user()->id)->where('state','refused')->update(['state'=>'new']);
+
+    public function newer()
+    {
+        Sponsorship::where('student_id', Auth::user()->id)->where('state', 'refused')->update(['state' => 'new']);
         return redirect()->route('welcome');
     }
-    
+
     public function render()
     {
-        $this->refuses = Sponsorship::where('student_id',Auth::user()->id)->where('state','refused')->orderBy('id','desc')->get();
+        $this->refuses = Sponsorship::where('student_id', Auth::user()->id)->where('state', 'refused')->orderBy('id', 'desc')->get();
         if (!$this->refuses->isEmpty()) {
             $this->title = $this->refuses[0]->title;
             $this->content = $this->refuses[0]->content;
             $this->professors = User::role('Teacher')->whereNotIn('id', $this->refuses->select('teacher_id'))->get();
             if ($this->professors->isEmpty()) {
-                Sponsorship::where('student_id',Auth::user()->id)->where('state','refused')->update(['state'=>'new']);
-                $this->reset(['title', 'professor','content']);
+                Sponsorship::where('student_id', Auth::user()->id)->where('state', 'refused')->update(['state' => 'new']);
+                $this->reset(['title', 'professor', 'content']);
                 $notification = new Notification();
-        $notification->user_id = Auth::user()->id;
-        $notification->content = 'يجب أن تكون مشكلتك منطقية او قم بتغيير عنوان طلبك ومحتواه رجاءا!!';
-        $notification->save();
+                $notification->user_id = Auth::user()->id;
+                $notification->content = 'يجب أن تكون مشكلتك منطقية او قم بتغيير عنوان طلبك ومحتواه رجاءا!!';
+                $notification->save();
             }
-        }else {
+        } else {
             $this->professors = User::role('Teacher')->get();
         }
-        
-        $this->is_onreq = Sponsorship::where('student_id',Auth::user()->id)->where('state','on_standby')->orwhere('state','accepted')->first();
+
+        $this->is_onreq = Sponsorship::where('student_id', Auth::user()->id)->where('state', 'on_standby')->orwhere('student_id', Auth::user()->id)->where('state', 'accepted')->first();
         return view('livewire.welcomepage.sponsorship-request');
     }
 }
