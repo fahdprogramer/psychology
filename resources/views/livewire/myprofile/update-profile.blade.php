@@ -1,14 +1,17 @@
 <div>
     <header>
-        <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
+        <h2 class="text-xl font-medium text-gray-900 dark:text-gray-100">
             {{ __('معلومات الحساب') }}
         </h2>
 
-        <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+        <p class="mt-1 text-lg text-gray-600 dark:text-gray-400">
             {{ __('قم بتحديث معلومات الملف الشخصي لحسابك وعنوان البريد الإلكتروني.') }}
         </p>
     </header>
-
+    <div class="mt-2 text-lg">
+        الإسم : <span class=" font-bold text-blue-950">{{Auth::user()->name}}</span>
+    </div>
+{{-- 
     <form wire:submit="updateProfileInformation" class="mt-6 space-y-6">
         <div>
             <x-input-label for="name" :value="__('الإسم')" />
@@ -48,4 +51,4 @@
             </x-action-message>
         </div>
     </form>
-</div>
+ --}}</div>

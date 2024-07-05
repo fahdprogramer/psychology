@@ -7,5 +7,5 @@
 
     @endif
     
-    <h2 class="text-red-500 text-sm mt-3">في حال لم يتم الرد على طلبك في غضون يومين سيلغى الطلب مباشرة</h2>
+    <h2 class=" bg-opacity-25 text-base font-bold text-amber-950 mt-3">في حال لم يتم الرد على طلبك في غضون يومين سيلغى الطلب مباشرة</h2>
 </div>

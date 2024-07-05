@@ -7,12 +7,14 @@ use App\Livewire\Admin\WelcomeAdmin;
 use App\Livewire\Other\ShowNotification;
 use App\Livewire\Profile;
 use App\Livewire\Student\MessangerChat;
+use App\Livewire\Student\StudentMainpage;
 use App\Livewire\Teacher\WelcometeacherPage;
 use App\Livewire\WelcomePage;
 use App\Livewire\Welcomepage\ShowPage2;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/index', Mainpage::class)->name('index.page');
+Route::get('/student_index', StudentMainpage::class)->name('index.page.student');
 Route::get('/', WelcomePage::class)->name('welcome');
 Route::middleware(['auth'])->group(function () {
 Route::get('/messanger', MessangerChat::class)->name('chat.messanger');

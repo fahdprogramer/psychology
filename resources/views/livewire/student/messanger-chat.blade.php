@@ -1,6 +1,6 @@
-<div wire:poll class="h-full sm:grid sm:grid-cols-5 ">
+<div wire:poll class="h-full sm:grid sm:grid-cols-5 py-20 pb-[150px] sm:pb-20">
 
-    <div class="relative sm:col-span-4 bg-opacity-40 bg-slate-300 h-full p-2 sm:p-8">
+    <div class="relative sm:col-span-4 bg-opacity-40 bg-slate-300 h-full p-2 sm:p-8 ">
 
         @if ($sponsorship->presence)
         <div class="p-2 rounded-2xl shadow-md shadow-red-500 mt-6">
@@ -8,7 +8,7 @@
     </div> 
     @endif
 
-        <div class="rounded-b-2xl bg-slate-300 h-[70svh] sm:h-96 overflow-y-auto p-6 pb-10 sm:pb-0 rotate-180">  
+        <div class="rounded-b-2xl bg-slate-300 h-[75svh] sm:h-96 overflow-y-auto p-6 pb-10 sm:pb-0 rotate-180">  
             @if ($messages->isEmpty())
             <div class="flex justify-center items-center rotate-180 h-full text-xl">
              قم بكتابة رسالة ترحيب الى الاستاذ  {{$professor->name}} 

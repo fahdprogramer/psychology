@@ -59,6 +59,7 @@ class SponsorshipRequest extends Component
         $this->alert('success', 'تمت إرسال طلبك بنجاح');
         // return redirect()->route('add.style', ['sponsorship' => $sponsorship->id]);
         $this->reset(['title', 'professor', 'content']);
+        return redirect()->route('welcome'); 
     }
 
     public function newer()

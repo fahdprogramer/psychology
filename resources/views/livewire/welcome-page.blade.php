@@ -1,16 +1,16 @@
-<div>
-
-<div class="px-1 sm:px-2 md:px-5 lg:px-10 xl:px-20 ">
+<div class="">
+@auth
+  <div class="px-1 sm:px-2 md:px-5 lg:px-10 xl:px-20 py-20 pb-36 sm:pb-20  min-h-screen">
     
- @auth
+
  <div class="p-4">
      <h1 class="font-bold  text-xl">
-    مرحبا سيد <span class="text-blue-800">{{ auth()->user()->name }}</span> !
+    مرحبا أيها الطالب <span class="text-blue-800">{{ auth()->user()->name }}</span> !
   </h1> 
 
  </div>
  <livewire:welcomepage.sponsorship-request>
- @endauth
+ 
    
 
 
@@ -19,10 +19,15 @@
             <livewire:welcomepage.our-testimonial>
         </div>
                 
-                    
-        </div>
+             
+        </div>  
+@endauth
+
+
+           
+        @guest
         <div class="xl:-px-20">
-          <livewire:welcomepage.show-page2>  
-        </div>
-        
+            <livewire:welcomepage.show-page2>
+                       </div>
+        @endguest  
     </div>

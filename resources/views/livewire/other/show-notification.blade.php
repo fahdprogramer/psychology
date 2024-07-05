@@ -1,4 +1,4 @@
-<div class="px-1 sm:px-2 md:px-5 lg:px-10 xl:px-20 py-6 min-h-screen">
+<div class="px-1 sm:px-2 md:px-5 lg:px-10 xl:px-20 min-h-screen py-28 pb-40 sm:pb-20">
     @if ($notifications->isEmpty())
         <div class="flex justify-center items-center mt-36 ">
             <div id="alert-2"
@@ -26,10 +26,10 @@
     @endif
 
 @foreach ($notifications as $item)
-<div class="bg-teal-400 bg-opacity-20 rounded-xl mb-3 pb-1">
+<div class="bg-teal-100 bg-opacity-20 rounded-xl mb-3 pb-1">
      <div class="flex justify-between  items-center p-4 pb-0">
         <div class="flex items-center">
-        <span class="p-4 rounded-full bg-blue-600"></span>
+        <span class="p-4 rounded-full bg-gray-600"></span>
         <div>
             <h1 class="mr-4">{{$item->content}}</h1>
         </div>

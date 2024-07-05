@@ -1,13 +1,17 @@
-<nav class='px-4 flex justify-between items-center text-xs sm:text-sm md:text-base bg-[#35392da3]'>
-    <a href="{{ route('welcome') }}" class='flex justify-center items-center'>
+<nav
+    class='absolute z-10  text-white w-full px-4 flex justify-between items-center text-xs sm:text-sm md:text-base bg-black bg-opacity-50'>
+
+    <a href="{{ route('index.page.student') }}" class='flex justify-center items-center'>
         <img src="images/icon/1.png" class="w-20" alt="">
     </a>
     @auth
         <div class=" justify-center items-center hidden sm:flex">
-           
+
+
             <a href="{{ route('welcome') }}">
                 <button
-                    class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300">الصفحة الرئيسية</button>
+                    class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300">فضاء
+                    الطالب </button>
             </a>
             <a href="{{ route('profile') }}">
                 <button
@@ -23,24 +27,25 @@
 
         </div>
     @endauth
-<div class="flex justify-center items-center sm:hidden">
-    <a href="{{ route('show.notifications') }}"  class="sm:hidden">
-        <livewire:other.nbr-notification>
-    </a>
-      
-      <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
-        class="text-black sm:hidden rotate-90 bg-slate-300 flex justify-center items-center hover:bg-slate-200 focus:ring-4 focus:outline-none focus:ring-slate-200 font-medium 
+    <div class="flex justify-center items-center sm:hidden">
+        <a href="{{ route('show.notifications') }}" class="sm:hidden">
+            <livewire:other.nbr-notification>
+        </a>
+
+        <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
+            class="text-white sm:hidden rotate-90 bg-slate-300 flex justify-center items-center hover:bg-slate-200 focus:ring-4 focus:outline-none focus:ring-slate-200 font-medium 
 rounded-lg text-sm px-2 py-1 pt-2 text-center dark:bg-slate-600 dark:hover:bg-slate-700 
 dark:focus:ring-slate-200"
-        type="button"> ااا
+            type="button"> ااا
 
-    </button>
+        </button>
 
-</div>
+    </div>
 
-  
+
     <!-- Dropdown menu -->
-    <div id="dropdown" class="z-10 hidden bg-slate-200 divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+    <div id="dropdown"
+        class="z-10 hidden bg-slate-200 divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
             @auth
                 <li class="mb-3">
@@ -53,24 +58,26 @@ dark:focus:ring-slate-200"
                     <a href="{{ route('welcome') }}">
                         <button
                             class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300 flex">
-                            الصفحة الرئيسية
+                            فضاء الطالب
                         </button>
                     </a>
                 </li>
             @endauth
             @guest
-            <li class="">
-                <a href="{{ route('login') }}"
-                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">تسجيل الدخول</a>
-            </li>
+                <li class="">
+                    <a href="{{ route('login') }}"
+                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">تسجيل
+                        الدخول</a>
+                </li>
             @endguest
             @auth
-               <li class="">
-                <button wire:click='logout'
-                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">تسجيل الخروج</button>
-            </li> 
+                <li class="">
+                    <button wire:click='logout'
+                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">تسجيل
+                        الخروج</button>
+                </li>
             @endauth
-            
+
         </ul>
     </div>
 

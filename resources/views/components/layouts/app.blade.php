@@ -36,7 +36,7 @@
 
 </head>
 
-<body style=" font-family: 'Marhey', sans-serif;
+<body class="relative" style=" font-family: 'Marhey', sans-serif;
 font-optical-sizing: auto;
 font-weight: 300;
 font-style: normal;">
@@ -45,10 +45,12 @@ font-style: normal;">
 @endauth
     
     
-<div class="bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 bg-opacity-70">
+<div class="bg-[#394246c0] bg-opacity-30">
+   
    {{ $slot }} 
    
 </div>
+
 <div class="relative w-full ">
 <livewire:welcomepage.footer-page>
 </div>

@@ -1,10 +1,10 @@
-<div wire:poll class="p-4 bg-[#b1a067] bg-opacity-20 lg:p-10 lg:grid grid-cols-2 lg:gap-10 mb-4  rounded-xl"
+<div wire:poll class="p-4 border-2  lg:p-10 lg:grid grid-cols-2 lg:gap-10 mb-4  rounded-xl"
     id="contact_us">
     @if ($is_onreq != null)
         <div class="flex justify-center items-center {{ $is_onreq->state == 'on_standby' ? '' : 'hidden' }}">
             <div>
-                <h1 class="text-2xl text-center">لديك طلب في انتظار موافقة الأستاذ <span
-                        class="text-3xl font-bold text-blue-600">{{ $selected_professor->name }} (
+                <h1 class="text-2xl text-center">لديك طلب في انتظار موافقة الأستاذ:  <br><span
+                        class="text-3xl font-bold text-blue-950">{{ $selected_professor->name }} (
                         <span>{{ $selected_professor->userspeciality->speciality->name }}</span> )</span> </h1>
                 <div>
                     <livewire:student.sponsorship-timer>
@@ -14,8 +14,8 @@
         </div>
         <div class="flex justify-center items-center {{ $is_onreq->state == 'accepted' ? '' : 'hidden' }}">
             <div class="">
-                <h1 class="text-2xl text-center">أنت في مرافقة مع الأستاذ <span
-                        class="text-3xl font-bold text-blue-600">{{ $selected_professor->name }} (
+                <h1 class="text-2xl text-center">أنت في مرافقة مع الأستاذ <br><span
+                        class="text-3xl font-bold text-blue-950">{{ $selected_professor->name }} (
                         <span>{{ $selected_professor->userspeciality->speciality->name }}</span> )</span> </h1>
                 <div class="flex justify-center items-center">
                     <a href="{{ route('chat.messanger') }}"
@@ -135,7 +135,7 @@
     </div>
 @endif
 
-<div class=" w-full h-full">
-    <img src="images/other/1.jpg" class="w-full h-full rounded-xl" alt="website">
+<div class=" w-full h-full flex justify-center items-center">
+    <img src="images/other/1.jpg" class="w-2/3 h-2/3 rounded-xl" alt="website">
 </div>
 </div>
