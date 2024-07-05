@@ -4,7 +4,7 @@
 
             <h1 class="text-4xl min-w-max text-center mb-2 sm:mb-0" style="font-family: 'Great Vibes', cursive;
             font-weight: 400;
-            font-style: normal;">website name</h1>
+            font-style: normal;">Student's Haven</h1>
 
         </div>
        <h1 class="text-center">كل الحقوق محفوظة 2024</h1>

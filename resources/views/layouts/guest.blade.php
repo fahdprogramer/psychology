@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $title ?? 'website name' }}</title>
+    <title>{{ $title ?? "Student's Haven" }}</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -43,7 +43,7 @@
                                 style="font-family: 'Great Vibes', cursive;
             font-weight: 400;
             font-style: normal;">
-                                website name</h1>
+                                Student's Haven</h1>
                         </div>
                     </a>
 

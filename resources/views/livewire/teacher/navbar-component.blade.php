@@ -1,7 +1,6 @@
-<nav class='p-4 flex justify-between items-center text-xs sm:text-sm md:text-base bg-rose-100'>
+<nav class='px-4 flex justify-between items-center text-xs sm:text-sm md:text-base bg-rose-100'>
     <a href="{{ route('welcome.teacher') }}" class='flex justify-center items-center'>
-        <button class='p-4 rounded-full bg-rose-200 ml-2'>logo</button>
-        <h1>اسم الموقع</h1>
+        <img src="images/icon/1.png" class="w-20" alt="">
     </a>
     @auth
         <div class="hidden sm:flex justify-center items-center">
@@ -17,7 +16,7 @@
 
         </div>
     @endauth
-    <div class="flex justify-center items-center">
+    <div class="flex justify-center items-center sm:hidden">
         <a href="{{ route('show.notifications') }}" class="sm:hidden">
             <livewire:other.nbr-notification>
         </a>

@@ -26,7 +26,7 @@ style="background-image: url('/images/background/6.jpg');
                             style="font-family: 'Great Vibes', cursive;
         font-weight: 400;
         font-style: normal;">
-                            website name</h1>
+                            Student's Haven</h1>
                     </div>
                 </a>
 <div class="z-10 sm:h-full flex justify-center sm:items-center">
