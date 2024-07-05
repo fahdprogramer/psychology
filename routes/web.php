@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Admin\Mainpage;
 use App\Livewire\Admin\StudentListe;
 use App\Livewire\Admin\TeacherListe;
 use App\Livewire\Admin\WelcomeAdmin;
@@ -8,8 +9,10 @@ use App\Livewire\Profile;
 use App\Livewire\Student\MessangerChat;
 use App\Livewire\Teacher\WelcometeacherPage;
 use App\Livewire\WelcomePage;
+use App\Livewire\Welcomepage\ShowPage2;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/index', Mainpage::class)->name('index.page');
 Route::get('/', WelcomePage::class)->name('welcome');
 Route::middleware(['auth'])->group(function () {
 Route::get('/messanger', MessangerChat::class)->name('chat.messanger');

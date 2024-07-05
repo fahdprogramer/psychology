@@ -1,7 +1,11 @@
-<div class="p-4 bg-[#45595b]  text-white">
-    <div class="sm:flex justify-between items-center">
-        <div>
 
+
+<div class="absolute w-full bottom-0 px-4 bg-[#45595b]  text-white border-t-2 border-white bg-opacity-50">
+    <div class="sm:flex justify-between items-center">
+        <div class="flex justify-center items-center">
+            <a href="{{ route('welcome') }}" class='flex justify-center items-center'>
+                <img src="images/icon/1.png" class="w-20" alt="">
+            </a>
             <h1 class="text-4xl min-w-max text-center mb-2 sm:mb-0" style="font-family: 'Great Vibes', cursive;
             font-weight: 400;
             font-style: normal;">Student's Haven</h1>
@@ -20,6 +24,6 @@
         </div>
 
     </div>
-    <div class="border border-amber-500 mt-3"></div>
+    
     
 </div>

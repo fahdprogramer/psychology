@@ -49,6 +49,9 @@ new #[Layout('layouts.guest')] class extends Component {
     </style>
 
     <div class="w-full min-[330px]:w-80 sm:w-full  h-fit">
+        <a href="{{ route('welcome') }}" class='flex justify-center items-center'>
+            <img src="images/icon/1.png" class="w-28" alt="">
+        </a>
         <h1 class="flex justify-center items-center mb-5 text-2xl font-bold text-center text-yellow-50  {{ $errors->isEmpty() ? 'animate animate__animated animate__fadeIn' : '' }}"
             style="animation-duration: 2s;animation-delay: 2s;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"

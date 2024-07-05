@@ -1,13 +1,15 @@
-<nav class='px-4 flex justify-between items-center text-xs sm:text-sm md:text-base bg-[#35392da3]'>
-    <a href="{{ route('welcome') }}" class='flex justify-center items-center'>
+<nav class='absolute z-10  text-white w-full px-4 flex justify-between items-center text-xs sm:text-sm md:text-base bg-black bg-opacity-50'>
+
+    <a href="{{ route('index.page') }}" class='flex justify-center items-center'>
         <img src="images/icon/1.png" class="w-20" alt="">
     </a>
     @auth
         <div class=" justify-center items-center hidden sm:flex">
            
+          
             <a href="{{ route('welcome') }}">
                 <button
-                    class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300">الصفحة الرئيسية</button>
+                    class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300">فضاء الإدارة</button>
             </a>
             <a href="{{ route('profile') }}">
                 <button
@@ -29,7 +31,7 @@
     </a>
       
       <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
-        class="text-black sm:hidden rotate-90 bg-slate-300 flex justify-center items-center hover:bg-slate-200 focus:ring-4 focus:outline-none focus:ring-slate-200 font-medium 
+        class="text-white sm:hidden rotate-90 bg-slate-300 flex justify-center items-center hover:bg-slate-200 focus:ring-4 focus:outline-none focus:ring-slate-200 font-medium 
 rounded-lg text-sm px-2 py-1 pt-2 text-center dark:bg-slate-600 dark:hover:bg-slate-700 
 dark:focus:ring-slate-200"
         type="button"> ااا

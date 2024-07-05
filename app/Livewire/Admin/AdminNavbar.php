@@ -1,27 +1,21 @@
 <?php
 
-namespace App\Livewire\Other;
+namespace App\Livewire\Admin;
 
 use App\Livewire\Actions\Logout;
-
 use Livewire\Component;
 
-class NavbarComponent extends Component
+class AdminNavbar extends Component
 {
-
-
-
-
     public function logout(Logout $logout)
     {
         $logout();
 
         return redirect()->route('login');
     }
-
-
+    
     public function render()
     {
-        return view('livewire.other.navbar-component');
+        return view('livewire.admin.admin-navbar');
     }
 }

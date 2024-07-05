@@ -1,24 +1,24 @@
 
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-6 h-[100vh] justify-center items-center">
     
-    <div class="hidden sm:block col-span-1 md:col-span-3 border-r-2  border-cyan-400 lg:col-span-4 w-full h-full"
+    <div class="hidden sm:block col-span-1 md:col-span-3  rounded-3xl sm:rounded-l-none border-r-2  border-cyan-400 lg:col-span-4 w-full h-full"
 style="background-image: url('/images/background/6.jpg');
     background-position: center;
     background-repeat: repeat;
     background-size: cover ;
     position: relative;">
-<div class="flex justify-center items-center h-full">
+<div class="flex justify-center items-center h-full rounded-3xl sm:rounded-l-none">
     <a href="{{route('student.liste')}}">
     <button type="button" class="text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">عرض قائمة الطلبة</button>
 </a>
 </div>
 </div>
-    <div class="w-full  h-full col-span-1 md:col-span-2  lg:col-span-2  justify-center items-center bg-[#0f141d]"
+    <div class="w-full  h-full col-span-1 md:col-span-2 rounded-3xl sm:rounded-r-none  lg:col-span-2  justify-center items-center bg-[#0f141d]"
         style="background-image: url('/images/background/9.jpg');background-position: center;
             background-repeat: repeat;
             background-size: cover ;
             position: relative;">
-        <div class=" flex w-full  h-full justify-center items-center bg-white bg-opacity-30  sm:pt-0">
+        <div class=" flex w-full  h-full justify-center items-center rounded-3xl sm:rounded-r-none bg-white bg-opacity-30  sm:pt-0">
             <div class="w-full px-10 ">
                 <a href="/" class="flex justify-center sm:hidden items-center mb-10  ">
                     <div class="logo">
@@ -29,7 +29,7 @@ style="background-image: url('/images/background/6.jpg');
                             Student's Haven</h1>
                     </div>
                 </a>
-<div class="z-10 sm:h-full flex justify-center sm:items-center">
+<div class="z-10 sm:h-full flex justify-center sm:items-center rounded-3xl sm:rounded-r-none">
     <style>
         @media (max-width: 640px) {
         .fahd{background-image: url('/images/welcomeImages/01.jpg');
@@ -47,7 +47,7 @@ style="background-image: url('/images/background/6.jpg');
 }
 
     </style>
-    <div class="w-full min-[330px]:w-80 sm:w-full  h-fit">
+    <div class="w-full min-[330px]:w-80 sm:w-full  h-fit rounded-3xl sm:rounded-r-none">
         <h1 class="flex justify-center items-center mb-8 text-2xl font-bold text-center text-yellow-50  {{$errors->isEmpty() ? 'animate animate__animated animate__fadeIn' : ''}}" style="animation-duration: 2s;animation-delay:2s;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 ml-3 text-lime-400">
                 <path d="M5.25 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM2.25 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM18.75 7.5a.75.75 0 0 0-1.5 0v2.25H15a.75.75 0 0 0 0 1.5h2.25v2.25a.75.75 0 0 0 1.5 0v-2.25H21a.75.75 0 0 0 0-1.5h-2.25V7.5Z" />

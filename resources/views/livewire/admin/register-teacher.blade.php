@@ -1,11 +1,11 @@
 
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-6 h-[100vh] justify-center items-center">
-    <div class="w-full  h-full col-span-1 md:col-span-2  lg:col-span-2  justify-center items-center bg-[#0f141d]"
+<div class="grid grid-cols-1 sm:grid-cols-2 rounded-3xl md:grid-cols-5 lg:grid-cols-6 h-[100vh] justify-center items-center">
+    <div class="w-full  h-full col-span-1 rounded-3xl sm:rounded-l-none md:col-span-2  lg:col-span-2  justify-center items-center bg-[#0f141d]"
         style="background-image: url('/images/background/9.jpg');background-position: center;
             background-repeat: repeat;
             background-size: cover ;
             position: relative;">
-        <div class=" flex w-full  h-full justify-center items-center bg-white bg-opacity-30  sm:pt-0">
+        <div class=" flex w-full  h-full justify-center items-center bg-white rounded-3xl sm:rounded-l-none bg-opacity-30  sm:pt-0">
             <div class="w-full px-10 ">
                 <a href="/" class="flex justify-center sm:hidden items-center mb-10  ">
                     <div class="logo">
@@ -131,7 +131,7 @@
 </div>
 
 </div>
-<div class="hidden sm:block col-span-1 md:col-span-3 border-r-2  border-cyan-400 lg:col-span-4 w-full h-full"
+<div class="hidden sm:block col-span-1 md:col-span-3 border-r-2 rounded-l-3xl  border-cyan-400 lg:col-span-4 w-full h-full"
 style="background-image: url('/images/background/2.jpg');
     background-position: center;
     background-repeat: repeat;
