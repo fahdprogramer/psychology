@@ -10,7 +10,7 @@
 
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg my-6">
     <table class="w-full text-sm text-left rtl:text-right text-blue-100 dark:text-blue-100">
-        <thead class="text-xs text-black font-bold uppercase bg-blue-600 bg-opacity-60 dark:text-white">
+        <thead class="text-xs text-black font-bold uppercase bg-blue-600 bg-opacity-60 dark:text-white" wire:poll>
             <tr>
                 <th scope="col" class="px-6 py-3">
                     اسم الطالب
@@ -24,8 +24,13 @@
         <tbody class="text-black">
             @foreach ($mysponsored as $item)
             <tr class="{{($loop->iteration % 2 == 0)?'bg-blue-600':'bg-blue-500'}} bg-opacity-40 border-b border-blue-400">
-                <th scope="row" class="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-blue-100">
-                    {{$item->student->name}}
+                <th scope="row" class="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-blue-100 flex items-center">
+                 @if ($item->have_reading_msg($item->student->id))
+                     <button class="bg-red-900 p-1 mb-1 ml-2 rounded-full"></button>   
+                 @endif
+                    
+                 
+                 {{$item->student->name}} 
                 </th>
             
                 <td class="px-6 py-4 ">

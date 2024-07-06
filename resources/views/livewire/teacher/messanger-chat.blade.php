@@ -24,7 +24,7 @@
                 
                   
                   <li>
-                    <button wire:click='finish' wire:confirm="هل أنت متأكد من إنهاء المرافقة?" class="block px-4 py-2 text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">إنهاء المرافقة</button>
+                    <button onclick="myFunction()" class="block px-4 py-2 text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">إنهاء المرافقة</button>
                   </li>
                 </ul>
             </div>
@@ -86,7 +86,7 @@
         <div class="">
             <h1 class="text-center">الطالب : <span class="text-blue-900 font-bold">{{ $student->name }}</span></h1>
             <div class="flex justify-center items-center">
-                <button wire:click='finish' wire:confirm="هل أنت متأكد من إنهاء المرافقة?" type="button"
+                <button onclick="myFunction()" type="button"
                     class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-xs px-2 py-2.5 text-center mt-4">إنهاء
                     المرافقة</button>
             </div>
@@ -103,4 +103,23 @@
      
         </div>
     </div>
+    <script>
+        
+        function myFunction() {
+            Swal.fire({
+                title: "هل أنت متأكد!",
+                text: "ستقوم بإنهاء هذه المرافقة!",
+                icon: "تنبيه",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                cancelButtonText: "إلغاء",
+                confirmButtonText: "نعم قم بالإنهاء!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    @this.finish()
+                }
+            });
+        }
+    </script>
 </div>

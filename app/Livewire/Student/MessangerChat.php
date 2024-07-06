@@ -53,7 +53,8 @@ class MessangerChat extends Component
 
     public function render()
     {
-        
+        Discussion::where('reciver_id',Auth::user()->id)->where('is_reading',false)->update(['is_reading'=>true]);
+
         return view('livewire.student.messanger-chat',[
             'messages' => Discussion::where('discussion_id',$this->sponsorship->id)->orderBy('id','asc')->get(),
         ]);

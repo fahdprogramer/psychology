@@ -35,11 +35,12 @@ class SponsorshipRequest extends Component
         if ($this->is_onreq) {
             $this->selected_professor = User::where('id', $this->is_onreq->teacher_id)->first();
         }
-        //dd($this->is_onreq);
+        //dd($this->professors);
     }
 
     public function save()
     {
+        
         $this->validate();
         $sponsorship = new Sponsorship();
         $sponsorship->title = $this->title;

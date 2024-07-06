@@ -1,6 +1,23 @@
-<div class="px-1 sm:px-2 md:px-5 lg:px-10 xl:px-20 min-h-screen py-28 pb-40 sm:pb-20">
+<div class="px-1 sm:px-2 md:px-5 lg:px-10 xl:px-20 min-h-screen py-28 pb-40 sm:pb-20" wire:poll>
     @if ($notifications->isEmpty())
-        <div class="flex justify-center items-center mt-36 ">
+    @if ($is_reading)
+    
+
+<div class="bg-teal-100 bg-opacity-20 rounded-xl mb-3 pb-1">
+    <div class="flex justify-between  items-center p-4 pb-0">
+       <div class="flex items-center">
+       <span class="p-4 rounded-full bg-gray-600"></span>
+       <div>
+           <h1 class="mr-4">لديك رسالة غير مقروءة</h1>
+       </div>
+   </div>
+   
+   </div>
+   <h1 class="text-xs font-bold mx-14 text-left">{{now()->format('H:i')}}</h1>
+   
+</div>
+@else
+ <div class="flex justify-center items-center mt-36 ">
             <div id="alert-2"
                 class="flex items-center w-fit p-4 mb-4 text-red-800 rounded-lg bg-red-100 dark:bg-gray-800 dark:text-red-400"
                 role="alert">
@@ -15,7 +32,28 @@
 
             </div>
         </div>
+
+@endif
+       
 @else
+@if ($is_reading)
+    
+
+<div class="bg-teal-100 bg-opacity-20 rounded-xl mb-3 pb-1">
+    <div class="flex justify-between  items-center p-4 pb-0">
+       <div class="flex items-center">
+       <span class="p-4 rounded-full bg-gray-600"></span>
+       <div>
+           <h1 class="mr-4">لديك رسالة غير مقروءة</h1>
+       </div>
+   </div>
+   
+   </div>
+   <h1 class="text-xs font-bold mx-14 text-left">{{now()->format('H:i')}}</h1>
+   
+</div>
+
+@endif
 
 <div class="flex justify-end">
     <button wire:click='removeAll' wire:confirm="هل أنت متأكد?" type="button" class="text-gray-900 bg-white border-2 hover:bg-gray-100  border-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-2 mb-2">
@@ -46,6 +84,7 @@
 </div>
 @endforeach
    
+
 
 
 

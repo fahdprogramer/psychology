@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('reciver_id');
             $table->text('content');
             $table->integer('discussion_id');
+            $table->boolean('is_reading')->default(false);
             $table->timestamps();
         });
     }

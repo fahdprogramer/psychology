@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Discussion extends Model
 {
     use HasFactory;
-    protected $fillable = ['sender_id','reciver_id', 'content', 'discussion_id'];
+    protected $fillable = ['sender_id','reciver_id', 'content', 'discussion_id','is_reading'];
 }

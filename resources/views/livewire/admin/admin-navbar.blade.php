@@ -1,7 +1,7 @@
 <nav class='absolute z-10  text-white w-full px-4 flex justify-between items-center text-xs sm:text-sm md:text-base bg-black bg-opacity-50'>
 
     <a href="{{ route('index.page') }}" class='flex justify-center items-center'>
-        <img src="images/icon/1.png" class="w-20" alt="">
+        <img src="images/icon/1.png" class="w-20" style="" alt="">
     </a>
     @auth
         <div class=" justify-center items-center hidden sm:flex">

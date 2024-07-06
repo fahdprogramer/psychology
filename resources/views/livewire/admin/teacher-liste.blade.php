@@ -1,7 +1,7 @@
-<div class="py-10 my-3 px-4 bg-slate-50 bg-opacity-60 rounded-3xl min-h-screen">
+<div class="py-28 px-4 bg-slate-50 bg-opacity-60  min-h-screen">
     <h1 class="font-bold text-2xl text-blue-900">قائمة الأساتذة المسجلين في الموقع</h1>
     @if ($teachers->isEmpty())
-        <h2 class="text-red-500 text-center">قائمة فارغة لايوجد أي أستاذ حاليا</h2>
+        <h2 class="text-red-500 text-center mt-6">قائمة فارغة لايوجد أي أستاذ حاليا</h2>
     @else
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg my-6">
             <table class="w-full text-sm text-left rtl:text-right text-blue-100 dark:text-blue-100">
