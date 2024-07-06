@@ -56,10 +56,11 @@ class SponsoredsRequest extends Component
 
     public function info(Sponsorship $sponsorship) {
         $this->alert('info', $sponsorship->content, [
-            //'position' => 'center',
-            'timer' => '10046',
+            'position' => 'center',
+            'timer' => '2400000',
             'toast' => true,
-            //'showCancelButton' => true,
+            'showCancelButton' => true,
+            'cancelButtonText' => 'X',
            ]);
     }
 

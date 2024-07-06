@@ -36,19 +36,20 @@
     <link rel="icon" type="image/x-icon" href="/images/icon/logo.png">
 </head>
 
-<body style="font-family: 'Marhey', sans-serif;
+<body class="relative" style="font-family: 'Marhey', sans-serif;
 font-optical-sizing: auto;
 font-weight: 300;
 font-style: normal;">
 
     <livewire:teacher.navbar-component />
     
-    <div class="px-4 bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 bg-opacity-70">
+    <div class="bg-[#394246c0] bg-opacity-30">
         {{ $slot }}
     </div>
     
+    <div class="relative w-full ">
         <livewire:welcomepage.footer-page>
-
+        </div>
 
 
 

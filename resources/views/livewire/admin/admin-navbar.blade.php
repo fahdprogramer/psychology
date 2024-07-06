@@ -11,7 +11,7 @@
                 <button
                     class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300">فضاء الإدارة</button>
             </a>
-            <a href="{{ route('profile') }}">
+            <a href="{{ route('admin.profile') }}">
                 <button
                     class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300">حسابي</button>
             </a>
@@ -46,7 +46,7 @@ dark:focus:ring-slate-200"
         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
             @auth
                 <li class="mb-3">
-                    <a href="{{ route('profile') }}">
+                    <a href="{{ route('admin.profile') }}">
                         <button
                             class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300">حسابي</button>
                     </a>

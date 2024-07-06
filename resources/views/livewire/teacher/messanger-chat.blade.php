@@ -1,4 +1,4 @@
-<div wire:poll class="h-full sm:grid sm:grid-cols-5 ">
+<div wire:poll class="h-full sm:grid sm:grid-cols-5 py-20 pb-[150px] sm:pb-20">
 
     <div class="relative sm:col-span-4 bg-opacity-40 bg-slate-300 h-full p-2 sm:p-8">
        

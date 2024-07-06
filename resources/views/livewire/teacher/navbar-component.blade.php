@@ -1,41 +1,55 @@
-<nav class='px-4 flex justify-between items-center text-xs sm:text-sm md:text-base bg-rose-100'>
-    <a href="{{ route('welcome.teacher') }}" class='flex justify-center items-center'>
+<nav
+    class='absolute z-10  text-white w-full px-4 flex justify-between items-center text-xs sm:text-sm md:text-base bg-black bg-opacity-50'>
+
+    <a href="{{ route('index.page.teacher') }}" class='flex justify-center items-center'>
         <img src="images/icon/1.png" class="w-20" alt="">
     </a>
     @auth
-        <div class="hidden sm:flex justify-center items-center">
-            <button
-                class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300">حسابي</button>
-            @auth
-                <a href="{{ route('show.notifications') }}">
-                    <button
-                        class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300 flex">الإشعارات
-                        (<livewire:other.nbr-notification>) </button>
-                </a>
-            @endauth
+        <div class=" justify-center items-center hidden sm:flex">
+
+
+            <a href="{{ route('welcome') }}">
+                <button
+                    class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300">فضاء
+                    الأستاذ </button>
+            </a>
+            <a href="{{ route('teacher.profile') }}">
+                <button
+                    class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300">حسابي</button>
+            </a>
+
+            <a href="{{ route('show.notifications.teacher') }}">
+                <button
+                    class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300 flex">الإشعارات
+                    (<livewire:other.nbr-notification>)
+                </button>
+            </a>
 
         </div>
     @endauth
     <div class="flex justify-center items-center sm:hidden">
-        <a href="{{ route('show.notifications') }}" class="sm:hidden">
+        <a href="{{ route('show.notifications.teacher') }}" class="sm:hidden">
             <livewire:other.nbr-notification>
         </a>
+
         <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
-            class="text-black sm:hidden rotate-90  bg-slate-300 flex justify-center items-center hover:bg-slate-200 focus:ring-4 focus:outline-none focus:ring-slate-200 font-medium 
+            class="text-white sm:hidden rotate-90 bg-slate-300 flex justify-center items-center hover:bg-slate-200 focus:ring-4 focus:outline-none focus:ring-slate-200 font-medium 
 rounded-lg text-sm px-2 py-1 pt-2 text-center dark:bg-slate-600 dark:hover:bg-slate-700 
-dark:focus:ring-slate-200 "
+dark:focus:ring-slate-200"
             type="button"> ااا
 
         </button>
+
     </div>
+
 
     <!-- Dropdown menu -->
     <div id="dropdown"
-        class="z-10 hidden bg-slate-200 divide-y divide-gray-100 rounded-lg shadow w-fit dark:bg-gray-700">
+        class="z-10 hidden bg-slate-200 divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
             @auth
                 <li class="mb-3">
-                    <a href="{{ route('profile') }}">
+                    <a href="{{ route('teacher.profile') }}">
                         <button
                             class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300">حسابي</button>
                     </a>
@@ -44,7 +58,7 @@ dark:focus:ring-slate-200 "
                     <a href="{{ route('welcome') }}">
                         <button
                             class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300 flex">
-                            الصفحة الرئيسية
+                            فضاء الأستاذ
                         </button>
                     </a>
                 </li>
@@ -59,7 +73,7 @@ dark:focus:ring-slate-200 "
             @auth
                 <li class="">
                     <button wire:click='logout'
-                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-red-600">تسجيل
+                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">تسجيل
                         الخروج</button>
                 </li>
             @endauth
@@ -67,7 +81,8 @@ dark:focus:ring-slate-200 "
         </ul>
     </div>
 
-    <div class="hidden sm:flex">
+
+    <div class="hidden sm:block">
         @guest
 
             <a href="{{ route('login') }}"

@@ -1,5 +1,6 @@
 <div>
-<div class="px-1 sm:px-2 md:px-5 lg:px-10 xl:px-20 ">
+
+<div class="px-1 sm:px-2 md:px-5 lg:px-10 xl:px-20 py-20 pb-36 sm:pb-20  min-h-screen">
     @auth
     <div class="p-4">
         <h1 class="font-bold text-xl">
@@ -18,8 +19,6 @@
             </div>      
                        
            </div>
-           <div class="xl:-px-20">
-            <livewire:welcomepage.show-page2>
-                       </div>
+        
            
           </div>

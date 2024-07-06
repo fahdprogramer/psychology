@@ -33,7 +33,7 @@
 
         <div>
             @if (!$refuses->isEmpty())
-                <h1 class="text-red-700 text-center">لقد رفض طلبك من قبل الأستاذ:
+                <h1 class="text-red-950 text-center text-lg">لقد رفض طلبك من قبل الأستاذ:
                     @foreach ($refuses as $item)
                         "{{ $item->teacher->name }}" 
                         @if ($loop->last)
