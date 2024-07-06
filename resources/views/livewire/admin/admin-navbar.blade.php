@@ -16,7 +16,7 @@
                     class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300">حسابي</button>
             </a>
 
-            <a href="{{ route('show.notifications') }}">
+            <a href="{{ route('show.notifications.admin') }}">
                 <button
                     class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300 flex">الإشعارات
                     (<livewire:other.nbr-notification>)
@@ -26,7 +26,7 @@
         </div>
     @endauth
 <div class="flex justify-center items-center sm:hidden">
-    <a href="{{ route('show.notifications') }}"  class="sm:hidden">
+    <a href="{{ route('show.notifications.admin') }}"  class="sm:hidden">
         <livewire:other.nbr-notification>
     </a>
       
