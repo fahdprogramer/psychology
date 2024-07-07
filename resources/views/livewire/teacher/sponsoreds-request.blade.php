@@ -99,41 +99,7 @@
                                 </div>
                             </td>
                         </tr>
-                        <script>
-                            function myFunction() {
-                                Swal.fire({
-                                    title: "هل أنت متأكد!",
-                                    text: "ستقوم بالموافقة على الطلب!",
-                                    icon: "تنبيه",
-                                    showCancelButton: true,
-                                    confirmButtonColor: "#3085d6",
-                                    cancelButtonColor: "#d33",
-                                    cancelButtonText: "إلغاء",
-                                    confirmButtonText: "نعم قم بالموافقة!"
-                                }).then((result) => {
-                                    if (result.isConfirmed) {
-                                        @this.accept({{ $item->id }})
-                                    }
-                                });
-                            }
-
-                            function myFunction2() {
-                                Swal.fire({
-                                    title: 'هل أنت متأكد!',
-                                    text: 'ستقوم برفض هذه المرافقة!',
-                                    icon: 'تنبيه',
-                                    showCancelButton: true,
-                                    confirmButtonColor: '#3085d6',
-                                    cancelButtonColor: '#d33',
-                                    cancelButtonText: 'إلغاء',
-                                    confirmButtonText: 'نعم قم بالرفض!'
-                                }).then((result) => {
-                                    if (result.isConfirmed) {
-                                        @this.refuse({{ $item->id }})
-                                    }
-                                });
-                            }
-                        </script>
+                       
                     @endforeach
 
 
