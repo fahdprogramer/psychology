@@ -10,19 +10,19 @@
 
             <a href="{{ route('welcome') }}">
                 <button
-                    class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300">فضاء
+                    class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300 {{Request()->route()->named('welcome')? 'text-blue-300' : ''}}">فضاء
                     الطالب </button>
             </a>
             <a href="{{ route('profile') }}">
                 <button
-                    class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300">حسابي</button>
+                    class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300 {{Request()->route()->named('profile')? 'text-blue-300' : ''}}">حسابي</button>
             </a>
 
         
 
             <a href="{{ route('show.notifications') }}">
                 <button
-                    class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300 flex">الإشعارات
+                    class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300 flex {{Request()->route()->named('show.notifications')? 'text-blue-300' : ''}}">الإشعارات
                     (<livewire:other.nbr-notification>)
                 </button>
             </a>

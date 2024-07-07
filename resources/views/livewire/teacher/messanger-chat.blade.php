@@ -65,6 +65,7 @@
 
         </div>
         <form wire:submit="send">
+            @csrf
             <div class=" w-full flex items-center rounded-b-2xl bg-slate-300 py-2 px-8">
 
                 <input type="text" id="small-input" wire:model='content'

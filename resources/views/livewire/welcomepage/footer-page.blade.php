@@ -4,7 +4,7 @@
     <div class="sm:flex justify-between items-center">
         <div class="flex justify-center items-center">
             <a href="{{ route('welcome') }}" class='flex justify-center items-center'>
-                <img src="images/icon/1.png" class="w-20" alt="">
+                <img src="/images/icon/1.png" class="w-20" alt="">
             </a>
             <h1 class="text-4xl min-w-max text-center mb-2 sm:mb-0" style="font-family: 'Great Vibes', cursive;
             font-weight: 400;

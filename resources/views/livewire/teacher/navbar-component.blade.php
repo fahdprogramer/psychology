@@ -2,7 +2,7 @@
     class='absolute z-10  text-white w-full px-4 flex justify-between items-center text-xs sm:text-sm md:text-base bg-black bg-opacity-50'>
 
     <a href="{{ route('index.page.teacher') }}" class='flex justify-center items-center'>
-        <img src="images/icon/1.png" class="w-20" alt="">
+        <img src="/images/icon/1.png" class="w-20" alt="">
     </a>
     @auth
         <div class=" justify-center items-center hidden sm:flex">
@@ -10,17 +10,17 @@
 
             <a href="{{ route('welcome') }}">
                 <button
-                    class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300">فضاء
+                    class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300 {{Request()->route()->named('welcome.teacher')? 'text-blue-300' : ''}}">فضاء
                     الأستاذ </button>
             </a>
             <a href="{{ route('teacher.profile') }}">
                 <button
-                    class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300">حسابي</button>
+                    class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300 {{Request()->route()->named('teacher.profile')? 'text-blue-300' : ''}}">حسابي</button>
             </a>
 
             <a href="{{ route('show.notifications.teacher') }}">
                 <button
-                    class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300 flex">الإشعارات
+                    class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300 {{Request()->route()->named('show.notifications.teacher')? 'text-blue-300' : ''}} flex">الإشعارات
                     (<livewire:other.nbr-notification>)
                 </button>
             </a>

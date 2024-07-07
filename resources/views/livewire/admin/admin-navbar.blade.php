@@ -9,16 +9,16 @@
           
             <a href="{{ route('welcome') }}">
                 <button
-                    class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300">فضاء الإدارة</button>
+                    class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300 {{Request()->route()->named('welcome.admin')? 'text-blue-300' : ''}}">فضاء الإدارة</button>
             </a>
             <a href="{{ route('admin.profile') }}">
                 <button
-                    class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300">حسابي</button>
+                    class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300 {{Request()->route()->named('admin.profile')? 'text-blue-300' : ''}}">حسابي</button>
             </a>
 
             <a href="{{ route('show.notifications.admin') }}">
                 <button
-                    class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300 flex">الإشعارات
+                    class="text-center mx-2 px-2 font-bold hover:font-semibold hover:text-blue-700 transition-all duration-300 {{Request()->route()->named('show.notifications.admin')? 'text-blue-300' : ''}} flex">الإشعارات
                     (<livewire:other.nbr-notification>)
                 </button>
             </a>
