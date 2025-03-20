@@ -12,7 +12,7 @@
                         </th>
 
                         <th scope="col" class="px-6 py-3">
-                            اسم ولقب الطالب
+                            اسم ولقب الأستاذ
                         </th>
 
                         <th scope="col" class="px-6 py-3">
